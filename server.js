@@ -15,12 +15,7 @@ var articleOne={
             <p> This is the content for my first article.  This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article. This is the content for my first article.</p>`
     
 };
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
 
-app.get('/article-one',function(req,res){
-     res.send(createTemplate(articleOne));
 
 function createTemplate (data){
     var title=data.title;
@@ -53,6 +48,12 @@ var html_template=`<html>
 return htmlTemplate;
 }
 });
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+app.get('/article-one',function(req,res){
+     res.send(createTemplate(articleOne));
 app.get('/article-two',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
     
