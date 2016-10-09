@@ -47,15 +47,17 @@ var html_template=`<html>
 `  ;
 return htmlTemplate;
 }
-});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one',function(req,res){
+    
      res.send(createTemplate(articleOne));
+});
 app.get('/article-two',function(req,res){
-   res.send(createTemplate(articleOne));
+   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
     
 });
 app.get('/article-three',function(req,res){
